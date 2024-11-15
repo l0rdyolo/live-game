@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhythm</title>
+  <script src="lib/p5.js"></script>
+  <script src="lib/p5.sound.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #1c1c1c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Arial', sans-serif;
+      position: relative;
+    }
+
+    #container {
+      position: relative;
+      width: 680px;
+      height: 400px;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    #navbar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, 0.75);
+      color: rgb(102, 255, 102);
+      font-size: 18px;
+      z-index: 10;
+    }
+
+    #fpsDisplay {
+      margin-left: 20px;
+    }
+
+    #scoreSpeed {
+      margin-right: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    #score, #speedDisplay {
+      margin: 0;
+    }
+
+    #refreshButton {
+      background-color: #444;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #refreshButton:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+    <div id="navbar">
+      <div id="fpsDisplay">FPS: 0</div>
+      <div id="scoreSpeed">
+        <div id="score">Score: 0</div>
+        <div id="speedDisplay">Speed: 0</div>
+      </div>
+      <button id="refreshButton" onclick="location.reload();">Refresh</button>
+    </div>
+    
+    <script src="gameConfig.js"></script>
+
+    <!-- Entities -->
+    <script src="src/entities/Player.js"></script>
+    <script src="src/entities/Star.js"></script>
+    <script src="src/entities/Obstacle.js"></script>
+
+
+
+    <!-- Level -->
+    <script src="src/level/PlatformConfig.js"></script>
+
+    
+    <!-- Scene -->
+    <script src="src/scene/Ground.js"></script>
+    <script src="src/scene/Sky.js"></script>
+    <script src="src/scene/Terrain.js"></script>
+    <script src="src/scene/Rainbow.js"></script>
+
+    
+    <!-- Utils -->
+    <script src="src/utils/Color.js"></script>
+    <script src="src/utils/ColorPalette.js"></script>
+    <script src="src/utils/HelperFuncs.js"></script>
+    <script src="src/SmootherPeaksProvider.js"></script>
+
+
+    
+    <!-- Managers -->
+    <script src="src/managers/Environment.js"></script>
+    <script src="src/managers/PatternManager.js"></script>
+    <script src="src/managers/CameraManager.js"></script>
+    <script src="src/managers/LaneLineManager.js"></script>
+    <script src="src/managers/PlatformManager.js"></script>
+    <script src="src/managers/SoundManager.js"></script>
+    <script src="src/managers/SpeedManager.js"></script>
+    <script src="src/managers/GameManager.js"></script>
+
+    <!-- Main Sketch -->
+    <script src="sketch.js"></script>
+</body>
+</html>
