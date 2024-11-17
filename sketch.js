@@ -16,11 +16,10 @@ function setup() {
 
 function draw() {
   background(0);
-  blendMode(LIGHTEST)
   gameManager.update();
   gameManager.draw();
 
-  updateStats(gameManager.speed);
+  updateStats(gameManager.speed , gameManager.baseSpeed);
 }
 
 function keyPressed() {
@@ -39,10 +38,13 @@ function keyPressed() {
   }
 }
 
-function updateStats(gameSpeed) {
+function updateStats(gameSpeed , gameBaseSpeed) {
   document.getElementById('speedDisplay').innerHTML = `Speed: ${gameSpeed.toFixed(0)}`; 
+  document.getElementById('base speedDisplay').innerHTML = `Base Speed: ${gameBaseSpeed.toFixed(0)}`; 
   document.getElementById('fpsDisplay').innerHTML = `FPS: ${frameRate().toFixed(0)}`;
   document.getElementById('score').innerHTML = `Score: ${gameManager.score}`;
+  document.getElementById('stage').innerHTML = `Stage: ${gameManager.stage}`;
+
 }
 
 function togglePlay() {

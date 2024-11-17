@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rhythm</title>
-  <script src="lib/p5.js"></script>
-  <script src="lib/p5.sound.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -51,6 +49,7 @@
       margin-left: 20px;
     }
 
+
     #scoreSpeed {
       margin-right: 20px;
       display: flex;
@@ -78,52 +77,17 @@
 <body>
     <div id="navbar">
       <div id="fpsDisplay">FPS: 0</div>
+
       <div id="scoreSpeed">
+        <div id="stage">Stage: 0</div>
         <div id="score">Score: 0</div>
+        <div id="base speedDisplay">Base Speed: 0</div>
         <div id="speedDisplay">Speed: 0</div>
       </div>
       <button id="refreshButton" onclick="location.reload();">Refresh</button>
     </div>
     
-    <script src="gameConfig.js"></script>
-
-    <!-- Entities -->
-    <script src="src/entities/Player.js"></script>
-    <script src="src/entities/Star.js"></script>
-    <script src="src/entities/Obstacle.js"></script>
-
-
-
-    <!-- Level -->
-    <script src="src/level/PlatformConfig.js"></script>
-
-    
-    <!-- Scene -->
-    <script src="src/scene/Ground.js"></script>
-    <script src="src/scene/Sky.js"></script>
-    <script src="src/scene/Terrain.js"></script>
-    <script src="src/scene/Rainbow.js"></script>
-
-    
-    <!-- Utils -->
-    <script src="src/utils/Color.js"></script>
-    <script src="src/utils/ColorPalette.js"></script>
-    <script src="src/utils/HelperFuncs.js"></script>
-    <script src="src/SmootherPeaksProvider.js"></script>
-
-
-    
-    <!-- Managers -->
-    <script src="src/managers/Environment.js"></script>
-    <script src="src/managers/PatternManager.js"></script>
-    <script src="src/managers/CameraManager.js"></script>
-    <script src="src/managers/LaneLineManager.js"></script>
-    <script src="src/managers/PlatformManager.js"></script>
-    <script src="src/managers/SoundManager.js"></script>
-    <script src="src/managers/SpeedManager.js"></script>
-    <script src="src/managers/GameManager.js"></script>
-
+    <script src="main.min.js"></script>
     <!-- Main Sketch -->
-    <script src="sketch.js"></script>
 </body>
 </html>
